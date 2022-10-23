@@ -12,7 +12,7 @@ Website: https://github.com/brainfucksec/neovim-lua
 --]]
 
 
--- ARCHIVOS DE CONFIG
+-- ARCHIVOS DE CONFIG / PLUGINS
 require	('settings')
 require	('keymaps')
 require ('plugins/packer')
@@ -31,6 +31,5 @@ require ('plugins/lsp-config')
 require ('plugins/cmp')
 --require ('plugins/coc')
 require ('plugins/nvim-comment')
---PLUGIN
 
 

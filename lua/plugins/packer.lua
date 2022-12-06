@@ -7,9 +7,16 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-
+  
   use 'wbthomason/packer.nvim'
-  use 'folke/tokyonight.nvim'
+  
+  -- THEME
+  use { "catppuccin/nvim", as = "catppuccin" } 
+  -- END THEME
+
+  -- DEVICONS
+  use 'nvim-tree/nvim-web-devicons'
+  -- END DEVICONS
 
   -- NEOTREE
   use {
@@ -26,8 +33,8 @@ return require('packer').startup(function(use)
  
  -- LUALINE
   use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	'nvim-lualine/lualine.nvim',
+	requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   -- FIN LUALINE
 
@@ -40,45 +47,48 @@ return require('packer').startup(function(use)
   -- FIN BUFFERLINE
  
   -- INDENT-BLANKLINE
-  -- init.lua
-    use 'lukas-reineke/indent-blankline.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
     -- FIN INDENT-BLANKLINE
     
     --TREE SITTEr
-     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-    }
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
     --FIN TREE SITTER
 
-    use 'wellle/targets.vim'
-
-    -- TELESCOPE    
-    use 'nvim-lua/plenary.nvim'
-    use {
+  use 'wellle/targets.vim'
+   -- use 'ryanoasis/vim-devicons'
+    
+   -- TELESCOPE    
+  use 'nvim-lua/plenary.nvim'
+  use {
       'nvim-telescope/telescope.nvim', 
       tag = '0.1.0',-- or                            , branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim'} }}
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
     use 'nvim-telescope/telescope-ui-select.nvim'
     use 'nvim-telescope/telescope-symbols.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
 
-      -- FIN TELESCOPE
+      -- END TELESCOPE
       
       -- TOGGLETERMINAL
     use {"akinsho/toggleterm.nvim", tag = '*', config = function() end}
-      -- FIN TOGGLETERM
+      -- END TOOGLETERMINAL
 
       -- LSPCONFIG
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-      -- FIN LSPCONFIG
-
+      -- END LSPCONFIG
+      --
       -- COMMENT
     use {'numToStr/Comment.nvim',
       config = function() end}
-      --FIN COMMENT
-    
+      --END COMMENT
+   
+
+    -- GIT-TOOL
     use 'tpope/vim-fugitive'
     use {
     'lewis6991/gitsigns.nvim',
@@ -88,7 +98,7 @@ return require('packer').startup(function(use)
     end
   } 
     use 'kdheepak/lazygit.nvim'
-
+  -- END GIT-TOOL
 
     -- CMP AUTOCOMPLETE
       use {
@@ -104,9 +114,13 @@ return require('packer').startup(function(use)
     }
     use 'rafamadriz/friendly-snippets'
     use {'onsails/lspkind-nvim'}
-    -- FIN AUTOCOMPLETE
+    -- END AUTOCOMPLETE
     --
---    use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
---
+    -- NVIM-COMMENT
     use "terrortylor/nvim-comment"
-    end)
+    -- END NVIM-COMMENT
+    
+    -- TRANSPARENT
+    use 'xiyaowong/nvim-transparent'
+    -- END TRANSPARENT
+  end)

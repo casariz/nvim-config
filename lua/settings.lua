@@ -4,6 +4,7 @@ local exec = vim.api.nvim_exec
 local fn = vim.fn
 local g = vim.g
 local opt = vim.opt
+local api = vim.api
 
 -- General
 g.mapleader = " "
@@ -20,3 +21,6 @@ opt.sw = 2
 opt.expandtab = false
 opt.syntax = enable
 opt.showmatch = true
+
+-- Config
+api.nvim_set_option("clipboard","unnamed")

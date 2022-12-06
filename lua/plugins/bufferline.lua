@@ -17,3 +17,8 @@ require('bufferline').setup({
   }
 })
 
+
+local opts = { noremap=true, silent=true }
+local map = vim.api.nvim_set_keymap
+map('n', '<leader>gb', '<cmd> BufferLinePick', opts)
+

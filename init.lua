@@ -13,11 +13,11 @@ Website: https://github.com/brainfucksec/neovim-lua
 
 
 -- ARCHIVOS DE CONFIG / PLUGINS
-require	('settings')
-require	('keymaps')
+require ('settings')
+require ('keymaps')
 require ('plugins/packer')
-require ('plugins/tokyonight')
-require	('plugins/neo-tree')           -- filebrowser
+require ('plugins/catppuccin')
+require ('plugins/neo-tree')           -- filebrowser
 require ('plugins/lualine')
 require ('plugins/bufferline')
 require ('plugins/indent-blankline')
@@ -29,7 +29,6 @@ require ('plugins/toggleterm')
 require ('plugins/gitsigns')
 require ('plugins/lsp-config')
 require ('plugins/cmp')
---require ('plugins/coc')
+require ('plugins/transparent')
 require ('plugins/nvim-comment')
-
-
+require ('plugins/wb-icons')

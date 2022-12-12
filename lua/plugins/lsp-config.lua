@@ -26,3 +26,4 @@ lspconfig.util.default_config = vim.tbl_deep_extend(
 --require'lspconfig'.sumneko_lua.setup({})
 require'lspconfig'.clojure_lsp.setup({})
 require'lspconfig'.pyright.setup({})
+--require'lspconfig'.java_language_server.setup({})
